@@ -8,7 +8,7 @@
 
 - name: 起動時にSELinux無効化 (/etc/sysconfig/selinux)
   become: yes
-  selinux: state=permissive
+  selinux: state=disabled
   when: result.rc == 0
 
 - name: SELinux無効化 (setenforce)
