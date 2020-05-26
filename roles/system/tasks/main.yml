@@ -51,7 +51,8 @@
 - name:  PostgreSQL12とヘッダファイルのインストール
   become: yes
   yum:
-    name='postgresql12-server,postgresql12-contrib,postgresql12-devel'
+    name='postgresql12-server,postgresql12-contrib,postgresql12-devel,centos-release-scl'
+# ,llvm-toolset-7
 
 - name: Apacheとヘッダファイルのインストール
   become: yes
