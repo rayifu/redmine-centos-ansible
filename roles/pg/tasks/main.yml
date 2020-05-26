@@ -7,6 +7,14 @@
   failed_when: result.rc not in [0, 1]
   changed_when: result.rc == 0
 
+
+- name: update environment variables in UNIX account postgres
+  blockinfile:
+    create: yes
+    dest: /var/lib/pgsql/.pgsql_profile
+    block: |
+      export PATH=/usr/pgsql-12/bin:$PATH
+  
 - name: pg_hba.confにredmine用設定が存在するか確認
   become: yes
   command:
