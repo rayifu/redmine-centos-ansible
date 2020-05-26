@@ -34,7 +34,7 @@
 - name: PostgreSQL起動
   become: yes
   service:
-    name=postgresql
+    name=postgresql-12
     state=restarted
     enabled=yes
 
