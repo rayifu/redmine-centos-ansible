@@ -43,10 +43,15 @@
   yum:
     name='openssl-devel,readline-devel,zlib-devel,curl-devel,libyaml-devel,libffi-devel'
 
-- name:  PostgreSQLとヘッダファイルのインストール
+- name:  PostgreSQL-repo install
   become: yes
   yum:
-    name='postgresql-server,postgresql-devel,python-psycopg2'
+    name='https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm'
+
+- name:  PostgreSQL12とヘッダファイルのインストール
+  become: yes
+  yum:
+    name='postgresql12-server,postgresql12-contrib,postgresql12-devel,centos-release-scl,llvm-toolset-7'
 
 - name: Apacheとヘッダファイルのインストール
   become: yes
