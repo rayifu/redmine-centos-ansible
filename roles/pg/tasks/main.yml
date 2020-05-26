@@ -1,7 +1,7 @@
 - name: PostgreSQL initdb
   become: yes
   command:
-    postgresql-setup initdb
+    postgresql-12-setup initdb
   register:
     result
   failed_when: result.rc not in [0, 1]
