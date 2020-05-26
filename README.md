@@ -30,6 +30,8 @@ Ansibleを使ってRedmineを自動インストールするためのプレイブ
 
 ```
 yum install -y epel-release
+   # if you use amazon, 
+   sudo amazon-linux-extras install ansible2
 yum install -y ansible git
 ```
 
