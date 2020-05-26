@@ -1,7 +1,7 @@
 - name: PostgreSQL initdb
   become: yes
   command:
-    postgresql-12-setup initdb
+    PGSETUP_INITDB_OPTIONS="-E UTF8 --no-locale" /usr/pgsql-12/bin/postgresql-12-setup initdb
   register:
     result
   failed_when: result.rc not in [0, 1]
