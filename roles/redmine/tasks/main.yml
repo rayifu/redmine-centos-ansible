@@ -28,7 +28,7 @@
   failed_when: result_test_gemfile.rc not in [0, 1]
   changed_when: false
 
-- name: gemsパッケージのインストール
+- name: Config gem packages
   become: yes
   command:
     bundle config build.pg --with-pg-config=/usr/pgsql-12/bin/pg_config
