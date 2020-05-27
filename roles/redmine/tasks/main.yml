@@ -28,19 +28,19 @@
   failed_when: result_test_gemfile.rc not in [0, 1]
   changed_when: false
 
-# - name: Config gem packages
-#   become: yes
-#   command:
-#     bundle config build.pg --with-pg-config=/usr/pgsql-12/bin/pg_config
-#     chdir={{ redmine_dir }}
-#   environment:
-#     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
-#   when:
-#     result_test_gemfile.rc == 1
+- name: Config gem packages
+  become: yes
+  command:
+    bundle config build.pg --with-pg-config=/usr/pgsql-12/bin/pg_config
+    chdir={{ redmine_dir }}
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
+  when:
+    result_test_gemfile.rc == 1
 # # - name: Config gem packages
 # #   shell: /usr/local/rbenv/shims/bundle config build.pg  --with-pg-config=/usr/pgsql-12/bin/pg_config
  
- - name: gemsパッケージのインストール
+- name: gemsパッケージのインストール
   become: yes
   command:
     bundle install --path vendor/bundle   --with-pg-config=/usr/pgsql-12/bin/pg_config
