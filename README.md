@@ -15,9 +15,9 @@ Ansibleを使ってRedmineを自動インストールするためのプレイブ
 
 ## システム構成
 
-* Redmine 3.4
+* Redmine 4.1-stable
 * CentOS 7.3
-* PostgreSQL
+* PostgreSQL 12
 * Apache
 
 
