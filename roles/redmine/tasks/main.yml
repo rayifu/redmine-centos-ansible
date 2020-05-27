@@ -43,7 +43,7 @@
 - name: gemsパッケージのインストール
   become: yes
   command:
-    bundle install --path vendor/bundle   --with-pg-config=/usr/pgsql-12/bin/pg_config
+    bundle install --path vendor/bundle
     chdir={{ redmine_dir }}
   environment:
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
