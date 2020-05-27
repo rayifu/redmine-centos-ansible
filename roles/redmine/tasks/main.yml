@@ -37,8 +37,10 @@
     PATH: "/usr/local/bin:{{ ansible_env.PATH }}"
   when:
     result_test_gemfile.rc == 1
-  
-  - name: gemsパッケージのインストール
+# - name: Config gem packages
+#   shell: /usr/local/rbenv/shims/bundle config build.pg  --with-pg-config=/usr/pgsql-12/bin/pg_config
+ 
+ - name: gemsパッケージのインストール
   become: yes
   command:
     bundle install --path vendor/bundle
